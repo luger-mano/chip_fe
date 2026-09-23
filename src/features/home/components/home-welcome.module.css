@@ -1,7 +1,78 @@
-.hero { max-width: 960px; margin: 0 auto; padding: clamp(5rem, 14vw, 10rem) 1.5rem; }
-.eyebrow { color: var(--accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; }
-.hero h1 { margin: 1.5rem 0; font-size: clamp(2.75rem, 7vw, 5.5rem); letter-spacing: -0.065em; line-height: 1.08; }
-.hero h1 span { color: var(--accent); }
-.hero p { max-width: 480px; color: var(--muted); font-size: 1.125rem; line-height: 1.8; }
-.status { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; padding: 0.65rem 1rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.8rem; }
-.status span { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; }
+﻿.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: clamp(32px, 8svh, 90px) 24px 0;
+  background: #101010;
+  color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.artwork {
+  display: block;
+  width: min(1068px, 63.6%, 95.6svh);
+  height: auto;
+  margin-inline: auto;
+  flex-shrink: 0;
+  transform: translateY(150px);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 180px;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.actions h1 {
+  margin: 30px 0 15px;
+  font-size: small;
+  line-height: inherit;
+  font-weight: 700;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 114px;
+  min-height: 32px;
+  border: 1px solid #f1f1f1;
+  border-radius: 999px;
+  font-size: small;
+  text-decoration: none;
+}
+
+.signup:hover {
+  background: rgb(241 241 241 / 8%);
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  margin-top: 10px;
+  color: #808080;
+  font-size: 10px;
+  text-underline-offset: 3px;
+}
+
+.login:hover {
+  color: #f1f1f1;
+}
+
+.actions a:focus-visible {
+  outline: 2px solid #f1f1f1;
+  outline-offset: 5px;
+}
+
+@media (max-width: 600px) {
+  .screen { justify-content: center; padding: 64px 24px; }
+  .artwork { width: 100%; }
+  .actions { margin-top: 48px; }
+}
