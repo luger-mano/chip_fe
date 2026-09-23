@@ -1,0 +1,182 @@
+.screen {
+  --section-gap: clamp(50px, calc((100dvh - 560px) * 0.08), 58px);
+  --control-height: clamp(44px, 6.5dvh, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background: #101010;
+  color: #f1f1f1;
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: clamp(12px, 2dvh, 24px) 24px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 517px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 var(--section-gap);
+  height: 51px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.emailRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.emailRow input {
+  width: 100%;
+  min-width: 0;
+  height: var(--control-height);
+  border: 0.5px solid #808080;
+  border-bottom: 2px solid #f1f1f1;
+  border-radius: 0;
+  padding: 0 25px;
+  background: transparent;
+  color: #f1f1f1;
+  font-size: 26.6px;
+}
+
+.emailRow input::placeholder {
+  color: #808080;
+  opacity: 1;
+}
+
+.continueButton {
+  display: grid;
+  place-items: center;
+  flex: 0 0 67px;
+  height: var(--control-height);
+  border: 0;
+  border-radius: 0;
+  background: #2275c8;
+  cursor: pointer;
+}
+
+.divider {
+  margin: var(--section-gap) 0;
+  color: #808080;
+  text-align: center;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.providers {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.8dvh, 24px);
+}
+
+.provider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 16px 0 40px;
+  border: 0.5px solid #808080;
+  border-radius: 0;
+  background: transparent;
+  color: #f1f1f1;
+  font-size: 26.6px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.providerIcon {
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.existingAccount {
+  margin-top: var(--section-gap);
+  text-align: center;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.existingAccount p {
+  margin: 0;
+  color: #808080;
+}
+
+.existingAccount a {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f1f1f1;
+  font-weight: 700;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.existingAccount a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.feedback {
+  margin: 12px 0 0;
+  color: #f1f1f1;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.feedback:empty {
+  display: none;
+}
+
+.legal {
+  margin-top: var(--section-gap);
+  color: #808080;
+  text-align: center;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.legal a {
+  text-underline-offset: 3px;
+}
+
+.screen button:hover {
+  background-color: #242424;
+}
+
+.screen .continueButton:hover {
+  background-color: #2d84da;
+}
+
+.screen :focus-visible {
+  outline: 2px solid #77b7f6;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .emailRow input { padding: 0 16px; font-size: 22px; }
+  .provider { padding-right: 10px; padding-left: 46px; font-size: clamp(14px, 3.8vw, 22px); }
+  .providerIcon { left: 12px; }
+  .legal { font-size: 14px; line-height: 20px; }
+  .desktopBreak { display: none; }
+}
