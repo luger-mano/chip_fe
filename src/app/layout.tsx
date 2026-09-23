@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
 
@@ -13,9 +12,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="pt-BR">
       <body>
         <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
-        <SiteHeader />
         <main id="conteudo">{children}</main>
-        <footer className="site-footer">CHIP · Construindo novas possibilidades.</footer>
       </body>
     </html>
   );
