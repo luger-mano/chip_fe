@@ -35,7 +35,8 @@ src/
     ui/                  Componentes visuais reutilizáveis
   config/                Configuração compartilhada
   features/
-    home/components/     Componentes da página inicial
+    auth/components/     Tela de login e seus estilos
+    home/components/     Página pública de boas-vindas
   hooks/                 Hooks React compartilhados
   lib/                   Utilitários e configuração de bibliotecas
   services/              Integrações com APIs
@@ -50,7 +51,9 @@ src/
 - Componentes são Server Components por padrão. Adicione `"use client"` quando precisar de estado, eventos ou APIs do navegador.
 - Use CSS Modules (`*.module.css`) para estilos locais.
 - Mantenha hooks e tipos específicos junto da funcionalidade; use pastas compartilhadas quando houver reutilização.
-- A página inicial é provisória. Ainda não há integração com backend ou autenticação.
+- A página pública `/` reproduz a arte pontilhada do arquivo `ola.svg`, preservada em `public/images/home/chip-welcome.svg`. “Abrir conta” leva para `/cadastro` e “Já tenho uma conta” para `/login`. A identificação de usuários cadastrados depende da futura integração de autenticação.
+- A tela de login está disponível em `/login`. O cadastro está em `/cadastro` e reutiliza o mesmo layout, com a logo `public/images/auth/white-logo.svg`. No login, o link “Abrir Conta” leva para `/cadastro`; no cadastro, o link “Entrar” leva para `/login`. Os ícones ficam em `public/images/auth/`.
+- O formulário valida email ou celular; os botões de provedores informam que a integração está pendente. Ainda não há backend, OAuth ou reCAPTCHA ativo. O texto de reCAPTCHA foi mantido para reproduzir o layout e exige integração antes da publicação.
 - TypeScript está limitado à série 6.0 e ESLint à série 9 por compatibilidade com os plugins de `eslint-config-next`. O npm sinaliza o ESLint 9 como fora de suporte; revise essa versão quando os plugins suportarem ESLint 10.
 
 ## Ambiente
