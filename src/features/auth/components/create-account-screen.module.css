@@ -1,0 +1,95 @@
+.screen {
+  min-height: 100dvh;
+  background: #101010;
+  color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: clamp(48px, 13.4dvh, 150px) 24px 70px;
+}
+.layout {
+  width: min(100%, 714px);
+  min-height: calc(100dvh - clamp(48px, 13.4dvh, 150px) - 70px);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.logo { display: flex; justify-content: center; height: 50px; margin-bottom: 65px; }
+.progress { width: 100%; height: 5px; background: #e7e7e7; }
+.progress span { display: block; height: 100%; background: #247bcc; transition: width .2s ease; }
+.stepCount { color: #898989; text-align: right; margin: 20px 0 14px; font-size: 18px; }
+.stepCount .finalStep { color: #247bcc; }
+.formArea { width: min(100%, 440px); margin: 0 auto; }
+.headingRow { position: relative; display: flex; align-items: center; min-height: 27px; margin-bottom: 72px; }
+.headingRow[data-step="2"] { margin-bottom: 44px; }
+.headingRow[data-step="3"] { margin-bottom: 94px; }
+.headingRow h1 { font-size: 18px; line-height: 1.3; margin: 0; font-weight: 700; }
+.backButton { position: absolute; width: 32px; height: 32px; left: -100px; top: 50%; transform: translateY(-50%); border: 0; background: none; display: grid; place-items: center; color: #888; cursor: pointer; }
+.arrow, .arrowBack { display: inline-block; width: 13px; height: 13px; border-right: 3px solid currentColor; border-top: 3px solid currentColor; transform: rotate(45deg); }
+.arrowBack { transform: rotate(-135deg); }
+.form { font-size: 18px; }
+.fieldLabel, .genderField legend, .birthField legend { display: block; margin-bottom: 9px; padding: 0; font-size: 18px; line-height: 1.25; }
+.passwordField { position: relative; height: 64px; border: 1px solid #888; border-bottom: 2px solid #e7e7e7; }
+.passwordField input { width: 100%; height: 100%; background: transparent; color: #f1f1f1; border: 0; outline: 0; padding: 0 65px 0 32px; font-size: 20px; }
+.passwordField input::placeholder, .textField::placeholder { color: #888; opacity: 1; }
+.passwordField button { position: absolute; inset: 0 0 0 auto; width: 65px; border: 0; background: transparent; color: #eee; cursor: pointer; display: grid; place-items: center; }
+.passwordField:focus-within { outline: 2px solid #77b7f6; outline-offset: 3px; }
+.passwordField button:focus-visible { outline: none; }
+.requirements { margin-top: 55px; }
+.requirements p { margin: 0 0 20px; font-weight: 700; }
+.requirements ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 17px; }
+.requirements li { display: flex; align-items: center; gap: 14px; white-space: nowrap; }
+.check, .checked { display: inline-grid; place-items: center; width: 20px; height: 20px; border: 1px solid #888; flex: 0 0 20px; font-size: 14px; color: #101010; }
+.checked { background: #247bcc; border-color: #247bcc; }
+.muted, .hint { color: #888; }
+.requirements .muted { margin-left: -12px; }
+.nextButton { display: grid; place-items: center; width: 100%; height: 64px; margin-top: 68px; border: 0; background: #287dc9; color: #fff; font-weight: 700; font-size: 18px; cursor: pointer; }
+.nextButton:hover { background: #358fdf; }
+.nameHint { margin: 0 0 15px; color: #888; line-height: 1.25; }
+.textField { width: 100%; height: 64px; padding: 0 18px; border: 1px solid #888; border-bottom: 2px solid #e7e7e7; background: transparent; color: #f1f1f1; outline: 0; font-size: 18px; }
+.genderField, .birthField { padding: 0; border: 0; margin: 36px 0 0; }
+.hint { margin: 0 0 14px; line-height: 1.25; }
+.genderOptions { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+.genderOptions label { display: flex; align-items: center; gap: 11px; cursor: pointer; }
+.genderOptions label:last-child { grid-column: 1 / -1; }
+.genderOptions input, .choiceCard input { appearance: none; width: 20px; height: 20px; flex: 0 0 20px; border: 1px solid #888; border-radius: 0; margin: 0; background: transparent; cursor: pointer; }
+.genderOptions input:checked, .choiceCard input:checked { background: #247bcc; border-color: #247bcc; }
+.genderOptions input:checked::after { content: ""; display: block; width: 10px; height: 10px; margin: 4px; background: #f1f1f1; }
+.choiceCard input:checked::after { content: "✓"; display: block; color: #101010; font-size: 15px; line-height: 18px; text-align: center; }
+.birthField { margin-top: 40px; }
+.birthField .hint { margin-bottom: 16px; }
+.birthInputs { display: grid; grid-template-columns: 60px 1fr 85px; gap: 9px; }
+.birthInputs input, .birthInputs select { min-width: 0; width: 100%; height: 60px; padding: 0 9px; border: 1px solid #888; border-radius: 0; background: #101010; color: #f1f1f1; text-align: center; font-size: 17px; }
+.birthInputs input::placeholder { color: #888; opacity: 1; }
+.birthInputs select { cursor: pointer; }
+.birthField + .nextButton { margin-top: 34px; }
+.choiceCard { display: flex; align-items: center; gap: 16px; min-height: 101px; padding: 18px 17px; border: 1px solid #888; margin-bottom: 34px; cursor: pointer; }
+.choiceCard span { display: block; }
+.choiceCard strong { display: block; font-weight: 400; font-size: 18px; line-height: 1.15; }
+.choiceCard small { display: block; margin-top: 6px; color: #888; font-size: 10px; line-height: 1.2; }
+.agreement { margin: 32px 0 0; font-size: 18px; line-height: 1.2; }
+.agreement span { text-decoration: underline; text-underline-offset: 2px; }
+.agreement + .nextButton { margin-top: 68px; }
+.feedback { margin: 14px 0 0; color: #f1f1f1; font-size: 14px; line-height: 1.4; }
+.legal { margin-top: auto; padding-top: 80px; color: #888; font-size: 18px; line-height: 1.2; text-align: center; }
+.legal a { text-underline-offset: 2px; }
+.screen :focus-visible { outline: 2px solid #77b7f6; outline-offset: 3px; }
+@media (max-width: 760px) {
+  .screen { padding: 48px 24px 40px; }
+  .layout { min-height: calc(100dvh - 88px); }
+  .logo { margin-bottom: 50px; }
+  .stepCount { margin-bottom: 26px; }
+  .formArea { width: 100%; }
+  .headingRow { padding-left: 35px; margin-bottom: 50px; }
+  .headingRow[data-step="2"] { margin-bottom: 36px; }
+  .headingRow[data-step="3"] { margin-bottom: 72px; }
+  .backButton { left: 0; }
+  .requirements li { white-space: normal; }
+  .requirements .muted { margin-left: -10px; }
+  .legal { font-size: 14px; padding-top: 70px; }
+  .desktopBreak { display: none; }
+}
+@media (max-width: 390px) {
+  .birthInputs { grid-template-columns: 56px 1fr 80px; gap: 6px; }
+  .birthInputs input, .birthInputs select { font-size: 15px; padding: 0 4px; }
+  .genderOptions { column-gap: 8px; }
+  .genderOptions label { font-size: 16px; }
+}
