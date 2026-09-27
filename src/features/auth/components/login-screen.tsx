@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useRef, useState, type FormEvent } from "react";
 import styles from "./login-screen.module.css";
 
@@ -10,6 +11,7 @@ type LoginScreenProps = {
 };
 
 export function LoginScreen({ variant = "login" }: LoginScreenProps) {
+  const router = useRouter();
   const [method, setMethod] = useState<"email" | "phone">("email");
   const [message, setMessage] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -17,6 +19,14 @@ export function LoginScreen({ variant = "login" }: LoginScreenProps) {
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (variant === "signup") {
+      sessionStorage.setItem("chip-signup-identifier", JSON.stringify({
+        method,
+        value: inputRef.current?.value.trim() ?? "",
+      }));
+      router.push("/cadastro/criar-conta");
+      return;
+    }
     setMessage("O acesso ainda não está disponível. A integração de autenticação será habilitada em breve.");
   }
 
